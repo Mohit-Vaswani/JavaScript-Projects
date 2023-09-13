@@ -1,123 +1,141 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    font-family: 'Inter', sans-serif;
-    text-align: center;
+body {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  background: #373737;
 }
 
-h1{
-    font-size: 4rem;
-    margin: 5rem 0 1rem;
-    color: #ffd000;
-    font-family: 'Dancing Script', cursive;
+h1 {
+  font-size: 4rem;
+  margin: 5rem 0 1rem;
+  color: #ffd000;
+  font-family: 'Dancing Script', cursive;
 }
 
-p{
-    margin: 0 0 5rem;
-    font-size: 1.2rem;
+p {
+  margin: 0 0 5rem;
+  font-size: 1.2rem;
+  color: white;
 }
 
 .container {
-    width: 1142px;
-    margin: 0 auto;
-  }
-  
-  
-  .box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  
-    padding: 50px 0;
-  }
+  width: 1142px;
+  margin: 0 auto;
+}
+
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  padding: 50px 0;
+}
+
+.item:hover .item_line {
+  transform: rotate(90deg);
+  bottom: 0;
+  left: 50%;
+}
+
+.item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+  box-shadow: rgb(255 241 4 / 46%) 1px 1px 5px;
+
+  border-radius: 8px;
+}
+
+.item_link {
+  display: block;
+  padding: 30px 20px;
+
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+  color: #c7c7c7;
+}
+
+.item_link:hover,
+.item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+}
+
+.item_link:hover .item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+
+.item_title {
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 30px;
+
+  z-index: 2;
+  position: relative;
+}
+
+.item_line {
+  height: 100px;
+  width: 4px;
+  background: #ffd000;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+
+@media only screen and (max-width: 979px) {
   .item {
-    -ms-flex-preferred-size: calc(33.33333% - 30px);
-    flex-basis: calc(33.33333% - 30px);
-  
-    margin: 0 15px 30px;
-  
-    overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  
-    border-radius: 8px;
-  }
-  .item_link {
-    display: block;
-    padding: 30px 20px;
-  
-    overflow: hidden;
-    text-decoration: none;
-    position: relative;
-    color: #3b3b3b;
-  }
-  .item_link:hover,
-  .item_link:hover .ag-courses-item_date {
-    text-decoration: none;
-  }
-  .item_link:hover .item_bg {
-    -webkit-transform: scale(10);
-    -ms-transform: scale(10);
-    transform: scale(10);
-  }
-  .item_title {
-    min-height: 87px;
-    margin: 0 0 25px;
-  
-    overflow: hidden;
-    
-    font-weight: bold;
-    font-size: 30px;
-  
-    z-index: 2;
-    position: relative;
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
   }
 
-  .item_line{
-    height: 100px;
-    width: 4px;
-    background: #ffd000;
-    position: absolute;
+  .item_title {
+    font-size: 24px;
   }
-  
-  
-  @media only screen and (max-width: 979px) {
-    .item {
-      -ms-flex-preferred-size: calc(50% - 30px);
-      flex-basis: calc(50% - 30px);
-    }
-    .item_title {
-      font-size: 24px;
-    }
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 96%;
   }
-  
-  @media only screen and (max-width: 767px) {
-    .container {
-      width: 96%;
-    }
-  
+
+}
+
+@media only screen and (max-width: 639px) {
+  .item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
   }
-  @media only screen and (max-width: 639px) {
-    .item {
-      -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-    }
-    .item_title {
-      min-height: 72px;
-      line-height: 1;
-  
-      font-size: 24px;
-    }
-    .item_link {
-      padding: 22px 40px;
-    }
+
+  .item_title {
+    min-height: 72px;
+    line-height: 1;
+
+    font-size: 24px;
   }
+
+  .item_link {
+    padding: 22px 40px;
+  }
+}
